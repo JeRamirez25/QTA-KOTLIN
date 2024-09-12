@@ -16,5 +16,17 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }fun main(){
+        println(creditoHipotecario(70000000,14.03,5))
+    }
+
+
+
+    fun creditoHipotecario(VP:Int, i:Double, n:Int): Int {
+        val VP = VP;
+        val i = ((i/12)/100);
+        val n = n*12;
+        val resultado = VP*(((1+i).pow(n)*i)/((1+i).pow(n)-1));
+        return resultado.toInt();
     }
 }
